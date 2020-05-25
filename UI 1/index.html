@@ -1,27 +1,255 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Task Manager</title>
+    <link rel="stylesheet" href="css.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script  src="myJs.js" ></script>
 </head>
 
 <body>
-    
     <!-- MAIN PAGE -->
-    <div id="main">
+    <div id="container">
     
         <!-- INTERFACE -->
-        <div id="container">
+        <div id="main-card">
 
+            <!-- LEFT SIDE OF CARD -->
             <div id="left-card">
 
+                <!-- TOP LEFT -->
+                <div id="user-info">
+                    <div id="user-topbar">
+                        <div id="user-image">
+                            <img src="images/1.jpg" alt="user-image">
+                        </div>
+                        <div id="user-name">
+                            <h4>Holden Caulifield</h4>
+                        </div>
+                        <div id="user-notification">
+                            <a href="#"><i class="far fa-bell"></i></a> 
+                        </div>
+                    </div>
+
+                    <div id="text-info">
+                        <h3>Contact List</h3>
+                        <p>Lorem ipsum digit lol gsigk drum into ocean</p>
+                    </div>
+
+                    <div id="user-btns">
+                        <a href="" class="new-contact">New Contact</a>
+                        <a href="" class="new-task">New Task</a>
+
+                        <div id="search-box">
+                            <input type="text" id="search-bar" placeholder="Search">
+                            <i class="fas fa-search"></i>
+                        </div>
+
+                    </div>                    
+                </div>
+                
+                <div id="contacts">
+
+                    <div class="contact-wrapper">
+                        <label for="contact-1" class="contact">
+                            <div class="inner-wrapper">
+                                <div class="contact-checkbox">
+                                    <input name="contacts-group" id="contact-1" type="checkbox">
+                                </div>
+                            
+                                <div class="contact-image">
+                                    <img src="images/1.jpg" alt="contact-image">
+                                </div>
+
+                                <div class="contact-name">
+                                    <h4>Lucinda Massey</h4>
+                                    <p>Management Consultant</p>
+                                </div>
+
+                                <div class="contact-edit">
+                                    <a href="#"><i class="fas fa-cog"></i>Edit</a> 
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="contact-wrapper">
+                        <label for="contact-2" class="contact">
+                            <div class="inner-wrapper">
+                                <div class="contact-checkbox">
+                                    <input name="contacts-group" id="contact-2" type="checkbox">
+                                </div>
+                            
+                                <div class="contact-image">
+                                    <img src="images/1.jpg" alt="contact-image">
+                                </div>
+
+                                <div class="contact-name">
+                                    <h4>Lucinda Massey</h4>
+                                    <p>Management Consultant</p>
+                                </div>
+
+                                <div class="contact-edit">
+                                    <a href="#"><i class="fas fa-cog"></i>Edit</a> 
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="contact-wrapper">
+                        <label for="contact-3" class="contact">
+                            <div class="inner-wrapper">
+                                <div class="contact-checkbox">
+                                    <input name="contacts-group" id="contact-3" type="checkbox">
+                                </div>
+                            
+                                <div class="contact-image">
+                                    <img src="images/1.jpg" alt="contact-image">
+                                </div>
+
+                                <div class="contact-name">
+                                    <h4>Lucinda Massey</h4>
+                                    <p>Management Consultant</p>
+                                </div>
+
+                                <div class="contact-edit">
+                                    <a href="#"><i class="fas fa-cog"></i>Edit</a> 
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                </div>
             </div>
 
             <div id="right-card">
-                
+                <div id="right-top">
+                    <div class="contact-image">
+                        <img src="images/1.jpg" alt="contact-image">
+                    </div>
+
+                    <div class="contact-name">
+                        <h4>Lucinda Massey</h4>
+                        <p>Management Consultant</p>
+                    </div>
+
+                    <div class="task-btn">
+                        <a href="" class="new-task">New Task</a> 
+                    </div>
+                </div>
+
+                <div id="right-bottom">
+                    <div class="tasks-cats">
+                        <a href="" class="tasks-category highlighted">Open <span>(10)</span></a>
+                        <a href="" class="tasks-category">In Progress <span>(8)</span></a>
+                        <a href="" class="tasks-category">Closed <span>(4)</span></a>
+                    </div>
+                    <div class="tasks-items">
+                        <div class="task-item">
+                            <label for="task-1">
+                            <div class="task-checkbox">
+                                    <input name="task-group" id="task-1" type="checkbox">
+                                </div>
+
+                                <div class="task-name">
+                                    <h4>Lorem carry all activities onwards</h4>
+                                    <p>10 min ago</p>
+                                </div>
+
+                                <div class="tasks-details">
+                                    <a href="#"><i class="fas fa-ellipsis-h"></i></a> 
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="task-item">
+                            <label for="task-2">
+                            <div class="task-checkbox">
+                                    <input name="task-group" id="task-2" type="checkbox">
+                                </div>
+
+                                <div class="task-name">
+                                    <h4>Deliver items to javascript boss man</h4>
+                                    <p>25 min ago</p>
+                                </div>
+
+                                <div class="tasks-details">
+                                    <a href="#"><i class="fas fa-ellipsis-h"></i></a> 
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="task-item">
+                            <label for="task-3">
+                            <div class="task-checkbox">
+                                    <input name="task-group" id="task-3" type="checkbox">
+                                </div>
+
+                                <div class="task-name">
+                                    <h4>Whats al this bramir hahaha</h4>
+                                    <p>30 min ago</p>
+                                </div>
+
+                                <div class="tasks-details">
+                                    <a href="#"><i class="fas fa-ellipsis-h"></i></a> 
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="task-item">
+                            <label for="task-4">
+                            <div class="task-checkbox">
+                                    <input name="task-group" id="task-4" type="checkbox">
+                                </div>
+
+                                <div class="task-name">
+                                    <h4>Tell the boss frontend guys are geniuses</h4>
+                                    <p>40 min ago</p>
+                                </div>
+
+                                <div class="tasks-details">
+                                    <a href="#"><i class="fas fa-ellipsis-h"></i></a> 
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="task-item">
+                            <label for="task-5">
+                            <div class="task-checkbox">
+                                    <input name="task-group" id="task-5" type="checkbox">
+                                </div>
+
+                                <div class="task-name">
+                                    <h4>Do the other projects ASAP</h4>
+                                    <p>60 min ago</p>
+                                </div>
+
+                                <div class="tasks-details">
+                                    <a href="#"><i class="fas fa-ellipsis-h"></i></a> 
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+        </div>
+
+        <!-- COLOR BOX -->
+        <div id="color-box">
+            <div class="colors">
+                <div class="color1"></div>
+                <div class="color2"></div>
+                <div class="color3"></div>
+                <div class="color4"></div>
+                <div class="color5"></div>
+                <div class="color6"></div>
+                <div class="color7"></div>
+                <div class="color8"></div>
+            </div>
         </div>
 
     </div>
