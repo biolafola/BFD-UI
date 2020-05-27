@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+html{
+  height: 100%;
+}
+body{
+  background-color:#4e4e4e;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  font-family: Montserrat;
+  height: 100%;
+}
+
+:focus{
+  outline-color: rgb(0, 195, 255);
+}
+
+#container{ 
+  height: 400px;
+  width:400px;
+  margin-top:30px;
+  padding-bottom:20px;
+  background-color:#f0f2f2;
+}
+
+#container-top{
+  display:grid;
+  grid-template-columns:repeat(8,auto);
+  height:13px;
+  width:100%;
+}
+
+.box-top{
+  height:13px;
+}
+#box-1{
+   background-color:#26926e;
+}
+#box-2{
+  background-color:#19b984;
+}
+#box-3{
+   background-color:#ac1825;
+}
+#box-4{
+   background-color:#be2432;
+}
+#box-5{
+   background-color:#f28e25;
+}
+#box-6{
+   background-color:#fbce00;
+}
+#box-7{
+   background-color:#0f7bd5;
+}
+#box-8{
+   background-color:#14c7ee;
+}
+
+
+#UI-text{
+  font-size: 1.8em;
+  font-weight:600;
+  margin-top: 30px;
+  color:#868989;
+  text-align:center;
+}
+
+
+.input-style{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+
+input{
+  background-color:#f0f2f2;
+  color:#868989;
+  border:2px solid #d2d3d3;
+  border-radius:5px;
+  margin-top:20px;
+  padding-left:15px;
+  height:50px;
+  width:80%;
+}
+
+input::placeholder{
+  color:#bdc1c2;
+
+}
+button{
+  font-size:25px;
+  background-color:#e64634;
+  color:white;
+  border: none;
+  padding: 15px;
+  border-radius:5px;
+  margin-top:20px;
+  width:85%;
+  cursor:pointer;
+}
