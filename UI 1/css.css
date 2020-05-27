@@ -115,6 +115,9 @@ a {
   width: 40px;
   height: 40px;
   border-radius: 5px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #user-name h4 {
@@ -260,16 +263,23 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .contact .inner-wrapper .contact-image img {
   width: 40px;
   height: 40px;
+  display: block;
   border-radius: 5px;
   margin: 15px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  overflow: hidden;
 }
 
 .contact .inner-wrapper .contact-name h4 {
