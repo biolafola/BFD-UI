@@ -1,0 +1,795 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@font-face {
+  font-family: Telugu;
+  src: url("font/Telugu MN.ttc");
+}
+
+:root {
+  --main-text-color: rgb(105, 105, 105);
+  --header-color: #433754;
+  --button-gradient: linear-gradient(240deg,#7813fe,#4536fe);
+  --flip-button-gradient: linear-gradient(240deg,#4536fe,#7813fe);
+}
+
+body {
+  font-family: Montserrat,sans-serif;
+  color: var(--main-text-color);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: Telugu;
+  color: var(--header-color);
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1220px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 15px;
+}
+
+#main-nav {
+  -webkit-animation: fadeInUp;
+          animation: fadeInUp;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-transition: ease-in;
+  transition: ease-in;
+}
+
+#main-nav .hamburger {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-text-color);
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu .menu-item-wrapper {
+  padding: 20px 20px 20px 20px;
+  position: relative;
+}
+
+.dropdown span {
+  font-size: 0.8rem;
+  padding-left: 7px;
+}
+
+.dropdown-content {
+  display: none;
+  position: fixed;
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(128, 128, 128, 0.191);
+          box-shadow: 0px 0px 15px 5px rgba(128, 128, 128, 0.191);
+  top: 28%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 0 auto;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.dropdown-content::before {
+  content: "";
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  left: 320px;
+  top: 0px;
+  z-index: -100;
+}
+
+.flip {
+  -webkit-transform: scaleY(-1);
+          transform: scaleY(-1);
+}
+
+.card {
+  width: 600px;
+  padding-bottom: 10px;
+}
+
+.card > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .card-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .card-image img {
+  width: 120px;
+  padding-right: 20px;
+}
+
+.card .card-text h2 {
+  margin-bottom: 0px;
+  color: var(--header-color);
+}
+
+.card .card-text p {
+  margin-top: 8px;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.card:hover .card-image {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.card:hover .card-text {
+  -webkit-transform: translateX(4px);
+          transform: translateX(4px);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.languages-dropdown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(128, 128, 128, 0.178);
+          box-shadow: 0px 0px 15px 5px rgba(128, 128, 128, 0.178);
+  padding: 10px 30px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.languages-dropdown a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.9rem;
+  padding-bottom: 20px;
+}
+
+.languages-dropdown img {
+  width: 16px;
+  padding-left: 20px;
+  margin-left: auto;
+}
+
+.languages-dropdown::before {
+  content: "";
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  left: 70px;
+  top: 0px;
+  z-index: -100;
+}
+
+.language:hover span {
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.language:hover img {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.languages {
+  padding-bottom: 0x !important;
+}
+
+.languages:hover .languages-dropdown {
+  display: block;
+  -webkit-animation: fadeIn;
+          animation: fadeIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.menu-item {
+  color: var(--header-color);
+}
+
+.menu-item::after {
+  content: "";
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  height: 2px;
+  width: 16px;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  background-color: #7813fe;
+}
+
+.menu-item-wrapper:hover .menu-item::after {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.sticky-nav {
+  display: none;
+  position: fixed;
+  top: -15px;
+  left: 50%;
+  min-width: 100%;
+  background-color: white;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(128, 128, 128, 0.287);
+          box-shadow: 0px 1px 2px 0px rgba(128, 128, 128, 0.287);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 2;
+}
+
+.sticky-nav .sticky-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1220px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 10px;
+}
+
+.sticky-nav .logo {
+  -webkit-animation: fadeInDown;
+          animation: fadeInDown;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+}
+
+.sticky-nav .menu {
+  padding-left: 150px;
+  -webkit-animation: fadeInDown;
+          animation: fadeInDown;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+}
+
+.sticky-nav .menu .menu-item-wrapper {
+  padding-top: 0px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sticky-nav .menu .dropdown-content {
+  top: 240px;
+}
+
+.sticky-nav .menu .dropdown-content::before {
+  content: "";
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  left: 270px;
+  top: 0px;
+  z-index: -100;
+}
+
+.sticky-nav .menu .languages {
+  position: static;
+}
+
+.sticky-nav .menu .languages-dropdown {
+  top: 45px;
+  background-color: white;
+}
+
+.sticky-nav .menu .languages-dropdown::before {
+  content: "";
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  left: 70px;
+  top: 0px;
+  z-index: -100;
+}
+
+.sticky-nav .menu-item::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 20px;
+  height: 2px;
+  width: 16px;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  background-color: #7813fe;
+}
+
+.sticky-nav .hamburger {
+  display: none;
+}
+
+.nav-btn-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding: 10px 20px 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 300;
+  border-radius: 30px;
+  color: white;
+  background: var(--button-gradient);
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.nav-btn-div span::before {
+  content: "Get Invited";
+  position: absolute;
+  background: var(--flip-button-gradient);
+  padding: 10px 20px 10px 20px;
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  opacity: 0;
+  -webkit-transition: 1s ease-in;
+  transition: 1s ease-in;
+}
+
+.nav-btn-div:hover span::before {
+  opacity: 1;
+}
+
+.show-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.animate-nav-out {
+  -webkit-animation: fadeOutUp;
+          animation: fadeOutUp;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+#hero {
+  height: 650px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#hero .hero-texts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 70px;
+  max-width: 1220px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#hero .hero-texts h1 {
+  font-weight: bold;
+  margin: 0;
+  -webkit-animation: fadeIn;
+          animation: fadeIn;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+#hero .hero-texts p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 0px;
+}
+
+#hero .hero-texts h4 {
+  margin-top: 15px;
+  padding-top: 0px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: montserrat, sans-serif;
+}
+
+#hero .hero-texts .small {
+  font-size: 0.9rem;
+}
+
+#hero .hero-texts .small span {
+  text-decoration: underline;
+  line-height: 1.5;
+}
+
+#hero .hero-text {
+  -webkit-animation: slideInDown;
+          animation: slideInDown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+#hero .movable-btn {
+  padding: 20px;
+  z-index: 1;
+}
+
+#hero .button {
+  display: block;
+  padding: 15px 20px 15px 20px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  border-radius: 50px;
+  color: white;
+  background: var(--button-gradient);
+  margin-top: 20px;
+  position: relative;
+  z-index: 0;
+}
+
+#hero .button span::before {
+  content: "Get Invited";
+  position: absolute;
+  background: var(--flip-button-gradient);
+  padding: 15px 20px 15px 20px;
+  left: 0;
+  top: 0;
+  border-radius: 50px;
+  opacity: 0;
+  -webkit-transition: 1s ease-in;
+  transition: 1s ease-in;
+}
+
+#hero .button:hover span::before {
+  opacity: 1;
+}
+
+#hero .counter {
+  height: 80px;
+  position: relative;
+  width: 300px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#hero .counter .move2 {
+  right: 90px;
+}
+
+#hero .counter .move3 {
+  right: 10px;
+}
+
+#hero .counter .move4 {
+  right: -50px;
+}
+
+#hero .counter .move5 {
+  right: -110px;
+}
+
+#hero .counter .comma {
+  font-size: 2.4rem;
+  color: var(--header-color);
+  font-weight: 600;
+  position: absolute;
+  left: 145px;
+}
+
+#hero .counter .dolla {
+  font-size: 3.6rem;
+  color: var(--header-color);
+  font-weight: 400;
+  position: absolute;
+  left: -35px;
+  top: -7px;
+}
+
+.hero-bg {
+  width: 100%;
+  position: absolute;
+  top: 35%;
+  min-width: 900px;
+  -webkit-animation: fadeIn;
+          animation: fadeIn;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+.hero-bg img {
+  position: absolute;
+  width: 150px;
+  -webkit-animation: fadeInUp;
+          animation: fadeInUp;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  z-index: -2;
+}
+
+.hero-bg .birds {
+  left: 250px;
+}
+
+.hero-bg .sun {
+  right: 250px;
+}
+
+.video-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1220px;
+  height: 350px;
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.video-section a {
+  font-size: 1.1rem;
+  font-weight: 300;
+  -webkit-animation: fadeIn;
+          animation: fadeIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.video-section a i {
+  font-size: 0.9rem;
+  padding: 10px;
+  margin-left: 20px;
+  -webkit-box-shadow: 0px 1px 8px 0px rgba(128, 128, 128, 0.287);
+          box-shadow: 0px 1px 8px 0px rgba(128, 128, 128, 0.287);
+  border-radius: 40px;
+}
+
+.video-section .video {
+  margin: 50px 0px 75px 0px;
+  padding: 20px;
+}
+
+.video-section-bg {
+  position: relative;
+  -webkit-animation: fadeIn;
+          animation: fadeIn;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  z-index: -2;
+}
+
+.video-section-bg img {
+  position: absolute;
+  left: 50%;
+  margin-left: -950px;
+  top: -150px;
+}
+
+@media screen and (max-width: 1500px) {
+  .hero-bg img {
+    width: 120px;
+  }
+  .hero-bg .birds {
+    left: 50px;
+  }
+  .hero-bg .sun {
+    right: 50px;
+  }
+  .sticky-nav .menu {
+    padding-left: 10px;
+  }
+  .sticky-nav .menu .menu-item-wrapper {
+    padding-top: 0px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .sticky-nav .sticky-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .sticky-nav .menu {
+    display: none;
+  }
+  .sticky-nav .logo {
+    margin-left: 20px;
+  }
+  .sticky-nav .hamburger {
+    display: block;
+    margin-right: 20px;
+  }
+  #main-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #main-nav .menu {
+    display: none;
+  }
+  #main-nav .hamburger {
+    display: block;
+    margin-left: 20px;
+  }
+  .close {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .hero-bg img {
+    display: none;
+  }
+}
+
+.close {
+  display: none;
+}
+
+.full-page-nav {
+  display: none;
+  -webkit-animation: slideInLeft;
+          animation: slideInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.full-page-nav .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  z-index: 2;
+  background-color: white;
+  margin-left: 0;
+}
+
+.full-page-nav .languages-dropdown {
+  position: relative;
+  background-color: white;
+  z-index: 2;
+  left: 0px;
+  top: 50px;
+  min-width: 300px;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hide {
+  display: none !important;
+}
+/*# sourceMappingURL=css.css.map */
