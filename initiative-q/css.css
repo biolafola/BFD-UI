@@ -109,6 +109,7 @@ a {
   padding: 30px;
   border-radius: 5px;
   background-color: white;
+  z-index: 3;
 }
 
 .dropdown-content::before {
@@ -347,7 +348,7 @@ a {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   position: absolute;
-  left: 270px;
+  left: 200px;
   top: 0px;
   z-index: -100;
 }
