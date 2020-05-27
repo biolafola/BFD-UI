@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$theme-color: rgb(87, 97, 236);
+$bg-shade: rgb(255, 255, 255);
+$dark-shade: rgb(160, 160, 160);
+$light-shade: rgba(236, 236, 236, 0.329);
+$h-shade: rgb(109, 109, 109);
+$light-theme:mix($theme-color, $light-shade, 15%);
+$darkest-theme: adjust-color($theme-color, $saturation: -45% , $lightness: -40%, $alpha: -0.7, $hue: 20deg);
+$button-colored: mix($theme-color, $dark-shade, 80%);
+
+//export variables
+:export {
+    themeColor: $theme-color;
+}
+
+
+
+// Mixins
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+  }
+
+//Placeholders
+%button{
+    padding:8px;
+    text-decoration: none;
+    font-size: 0.7em;
+    border-radius: 4px;
+}
+
+%button-colored{
+    @extend %button;
+    background-color: $theme-color;
+    color:white;    
+}
+
+%button-trans{
+    @extend %button;
+    background-color: none;
+    color:$h-shade;
+    box-shadow:inset 0px 0px 0px 1px adjust-color($h-shade, $lightness: 30%);
+}
+
+//  -----------------------------------------------
+
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0 auto;
+    width: 100%;
+    height:100%;
+    background-color: mix($theme-color, $bg-shade, 80%);
+    font-family: 'Poppins', sans-serif;
+}
+
+p{
+    font-size: 0.7em;
+    color: rgb(143, 143, 143);
+}
+
+h3{
+    font-size: 1em;
+    font-weight: 600;
+}
+
+a{
+    text-decoration: none;
+}
+
+#container{
+    display:flex;
+    height:100%;
+    width:100%;
+    align-items: center;
+    overflow-x: auto;
+    isolation: isolate; 
+}
+
+
+#main-card{
+    display: flex;
+    background-color: mix($theme-color, $bg-shade, 80%);
+    height: 500px;
+    width:1000px;
+    margin: 0 auto;
+    border-radius: 10px;; 
+    box-shadow: 3px 3px 20px 1px rgba(0, 0, 0, 0.137);
+}
+
+%card{
+    width:500px;
+    height: 100%;
+}   
+
+#left-card{
+    @extend %card;
+    background-color: white;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#right-card{
+    @extend %card;
+    background-color: $theme-color;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#user-info{
+    height:45%;
+    width: 100%;
+    box-shadow: -1px 2px 5px 1px rgba(128, 128, 128, 0.178);
+    padding: 30px;
+}
+
+#user-topbar{
+    display:flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+#user-image{
+
+    img
+    {
+        width: 40px;
+        height:40px;
+        border-radius: 5px;
+        align-self: center;
+    }
+    
+}  
+
+#user-name{
+
+    h4
+    {
+        padding-left: 12px;
+        color: mix($theme-color, $h-shade, 70%);
+        font-weight: 600;
+        font-size: 0.9em;
+    }
+
+}
+#user-notification{
+    margin-left: auto;
+
+    i
+    {
+        color: mix($theme-color, $bg-shade, 80%);
+        padding:8px;
+        background-color: $light-theme;
+        border-radius: 3px;
+
+        &:hover{
+            @include transform(scale(1.1));
+            transition: .3s ease-in;
+        }
+    }
+}
+
+#text-info{
+
+    margin-top: 10px;
+
+    h3{   
+        margin: 0.5em 0em 0em 0em;
+        color: adjust-color($h-shade, $lightness: -20% )
+    }
+
+    p{
+        padding: 0;
+        margin: 0em;
+    }
+}
+
+
+#user-btns{
+
+    display: flex;
+    margin-top: 25px;
+    align-items: center;
+
+    .new-contact{
+        @extend %button-colored;
+        &:hover{
+            @include transform(scale(1.03));
+            transition: .3s ease-in;
+        }
+    }
+
+    .new-task{
+        @extend %button-trans;
+        margin-left: 15px;
+        &:hover{
+            @include transform(scale(1.03));
+            transition: .3s ease-in;
+        }
+    }
+}
+
+#search-box{
+    margin-left: auto;
+    position: relative;
+    
+    input{
+        border: 1px solid;
+        border-color: adjust-color($h-shade, $lightness: 50%);
+        font-size: 0.7em;
+        height: 34px;
+        padding-left: 10px;
+        color: adjust-color($h-shade, $lightness: 30%);
+        border-radius: 4px;
+        align-self: center;
+        width: 250px;
+        
+        &:focus{
+            border: 2px solid;
+            border-color:  mix($theme-color, $dark-shade, 80%);
+            outline: none;
+        }
+        
+        &::placeholder{
+            color: adjust-color($h-shade, $lightness: 30%);
+            font-family: poppins,sans-serif;
+        }
+    }
+
+    i{
+        position: absolute;
+        font-size: 0.7em;
+        font-weight: 600;
+        color: adjust-color($h-shade, $lightness: 40%);
+        right: 10px;
+        top: 12px;
+    }
+}
+
+.contact{
+    user-select: none;
+    .inner-wrapper{
+        
+        display: flex;
+        align-items: center;
+        padding: 0px 30px 0px 25px;
+        height:90px;
+
+        .contact-image{
+            display: flex;
+            align-items: center;
+            align-self: center;
+            
+            
+
+            img
+            {
+                width: 40px;
+                height:40px;
+                display:block;
+                border-radius: 5px;
+                margin: 15px;
+                align-self:center;
+                overflow: hidden;
+            }
+            
+        }  
+        
+        .contact-name{
+        
+            h4
+            {
+                color: adjust-color($h-shade, $lightness: -20% );
+                font-weight: 600;
+                font-size: 0.9em;
+                margin:0px;
+            }
+            p{
+                margin:0px;
+            }
+        
+        }
+        
+        .contact-edit{
+            margin-left: auto;
+
+            a{
+                color: adjust-color($h-shade, $lightness: 40%);
+                user-select: none;
+
+                i{
+                    padding:8px;
+                }
+
+                &:hover{
+                    @include transform(scale(6));
+                    transition: .3s ease-in;
+                    color:$theme-color;
+                }
+            }
+        }
+    }   
+}
+
+
+
+.contact-checkbox {
+    display: inline-flex;
+    cursor: pointer;
+    position: relative;
+}
+
+.contact-checkbox > input {
+    height: 15px;
+    width: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 1px solid $dark-shade;
+    border-radius: 2px;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color: rgb(241, 241, 241);
+    cursor: pointer;
+  }
+
+.contact-checkbox > input:checked {
+    border: 1px solid $light-shade;
+    background-color: $theme-color;
+}
+
+.contact-checkbox > input:checked::before {
+    content: '\2713';
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    right: 0.4rem;
+    top: 0.2rem;
+}
+
+
+///////////////RIGHT CARD CODE BEGINS HERE
+#right-top{
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    background-color: $darkest-theme;
+    padding: 0px 30px 0px 30px;
+
+    .contact-image{
+        display: flex;
+
+        img
+        {
+            width: 50px;
+            height:50px;
+            border-radius: 5px;
+            align-self:center;
+        }
+        
+    }  
+    
+    .contact-name{
+        margin-left: 20px;
+        h4
+        {
+            color: white;
+            font-weight: 500;
+            font-size: 1rem;
+            margin:0px;
+            
+        }
+        p{
+            font-size: 0.7rem;
+            color: $light-shade;
+            margin:0px;
+        }
+    
+    }
+    
+    .task-btn{
+        margin-left: auto;
+        @extend %button-colored;
+        a{
+            font-size: 0.8rem;
+            color:white;
+           
+        }
+        &:hover{
+            @include transform(scale(1.03));
+            transition: .3s ease-in;
+        }
+    }
+}   
+
+
+
+////RIGHT BOTTOM
+
+#right-bottom{
+    display:flex;
+    padding: 30px;
+}
+
+.tasks-cats{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+
+    .tasks-category{
+        color: white;
+        opacity: .5;
+        font-size: 0.7rem;
+        padding-bottom: 12px;;
+    }
+    span{
+        font-style: italic;
+    }
+    .highlighted{
+        opacity: 1;
+    }
+}
+
+
+
+//chckbox
+.task-checkbox {
+    display: inline-flex;
+    cursor: pointer;
+    position: relative;
+}
+
+.task-checkbox > input {
+    height: 15px;
+    width: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 2px solid adjust-color($theme-color, $lightness: 20);
+    opacity:0.8;
+    border-radius: 10px;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+.task-checkbox > input:checked {
+    border: 1px solid $light-shade;
+    background-color: $theme-color;
+}
+
+.task-checkbox > input:checked::before {
+    content: '\2713';
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    right: 0.4rem;
+    top: 0.2rem;
+}
+//checkbox end
+
+.tasks-items{
+    width: 75%;
+    margin-left: 5px;;
+}
+.task-item{
+    label{
+        display:flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 30px;
+    }
+}
+
+.task-name{
+    margin-left: 10px;
+    h4{
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: white;
+        padding-bottom: 6px;
+        margin:0;
+    }
+    p{
+        padding: 0px;
+        margin:0;
+        color:white;
+        opacity:0.7;
+        font-size: 0.6rem;
+        font-style: italic;
+    }
+}
+
+.tasks-details
+{
+    align-self: flex-end;
+    margin-left: auto;
+    a{
+        color:adjust-color($theme-color, $lightness: 20);
+    }
+}
